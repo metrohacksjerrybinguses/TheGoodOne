@@ -1,45 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--<TextView-->
-        <!--android:id="@+id/home"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/app_name"-->
-        <!--android:textSize="50sp" />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#ffc9fe">
 
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="Result..."
-        android:layout_below="@id/getBtn"/>
+        <TextView
+            android:id="@+id/apptitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70sp"
+            android:textSize="50sp"
+            android:text="@string/app_name"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_largetext"
+            android:paddingVertical="10sp"
+            android:paddingHorizontal="15sp"
+            android:textColor="#ffffff" />
 
-    <Button
-        android:id="@+id/getBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Website"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true" />
+        <Button
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="200sp"
+            android:padding="16sp"
+            android:text="Get started"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/bg_buttonz"/>
 
-    <Button
-        android:id="@+id/camera"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
-        android:text="Button"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

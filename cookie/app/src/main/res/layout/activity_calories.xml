@@ -5,45 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Calories">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/foodName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/foodName"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="50sp" />
 
-    <TextView
-        android:id="@+id/foodName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/foodName"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="50sp" />
+        <TextView
+            android:id="@+id/serving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/serving"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"/>
 
-    <TextView
-        android:id="@+id/serving"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/serving"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calories"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"/>
 
-    <TextView
-        android:id="@+id/calories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/calories"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"/>
+        <Button
+            android:id="@+id/home"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:onClick="goToHome"
+            android:text="@string/home"
+            android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/home"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
-        android:onClick="goToHome"
-        android:text="@string/home"
-        android:textSize="24sp" />
-
-    <Button
-        android:id="@+id/add"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
-        android:onClick="goToDay"
-        android:text="@string/add"
-        android:textSize="24sp"/>
+        <Button
+            android:id="@+id/add"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:onClick="goToDay"
+            android:text="@string/add"
+            android:textSize="24sp"/>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

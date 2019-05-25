@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 /*This page is the home page that opens when the user opens the app.
 From this page the user can take a picture of food
@@ -17,8 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private android.graphics.Bitmap imageBitmap;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
             Bundle extras = data.getExtras();
             imageBitmap = (Bitmap) extras.get("data");
             //imageView.setImageBitmap(imageBitmap);
+            goToHome();
         }
+    }
+
+    public void goToHome(){
+        Intent intent = new Intent(this, Calories.class);
+        startActivity(intent);
     }
 }

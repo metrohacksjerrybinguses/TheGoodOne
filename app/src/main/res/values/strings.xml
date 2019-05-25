@@ -3,6 +3,8 @@
     <string name="foodName">Food</string>
     <string name="serving">Serving Size</string>
     <string name="calories">Calories</string>
+    <string name="home">Home</string>
+    <string name="add">Add</string>
 
 
 </resources>

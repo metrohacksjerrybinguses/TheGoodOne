@@ -22,7 +22,6 @@
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Date"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -33,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20sp"
-            android:text="Total Calories: [number]"
+            android:text="@string/total"
             android:textAlignment="center"
             android:textSize="30sp" />
 
@@ -50,27 +49,27 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="55sp"
-                android:text="Time" />
+                android:text="@string/time" />
 
             <TextView
                 android:id="@+id/itemlabel"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="55sp"
-                android:text="Item" />
+                android:text="@string/item" />
 
             <TextView
                 android:id="@+id/quantitylabel"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="55sp"
-                android:text="Quantity" />
+                android:text="@string/amount" />
 
             <TextView
                 android:id="@+id/calorielabel"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Calorie Count" />
+                android:text="@string/calcount" />
 
         </LinearLayout>
 
@@ -117,8 +116,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="View nutrition for another item"
-                android:layout_marginBottom="10sp"/>
+                android:layout_marginBottom="10sp"
+                android:text="@string/nutrition" />
 
         </LinearLayout>
 

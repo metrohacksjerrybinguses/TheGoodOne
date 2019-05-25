@@ -17,8 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ClassifierActivity"
-            android:label="@string/activity_name_classification"
+            android:name=".MainActivity"
+            android:label="@string/date"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

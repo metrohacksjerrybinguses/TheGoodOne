@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">TheGoodOne</string>
     <string name="description_info">Info</string>
     <string name="request_permission">This sample needs camera permission.</string>
     <string name="camera_error">This device doesn\'t support Camera2 API.</string>
@@ -22,7 +23,7 @@
         <item>NNAPI</item>
     </string-array>
 
-    <string name="app_name">TheGoodOne</string>
+
     <string name="foodName">Food</string>
     <string name="serving">Serving Size</string>
     <string name="calories">Calories</string>

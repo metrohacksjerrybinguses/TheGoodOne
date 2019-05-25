@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //Converts the image data to a String which can be stored in the app
+    //Saves Bitmap
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 

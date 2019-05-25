@@ -5,6 +5,14 @@
     <string name="calories">Calories</string>
     <string name="home">Home</string>
     <string name="add">Add</string>
+    <string name="date">Date</string>
+    <string name="total">Total Calories: [number]</string>
+    <string name="time">Time</string>
+    <string name="item">Item</string>
+    <string name="amount">Quantity</string>
+    <string name="calcount">Calorie Count</string>
+    <string name="nutrition">View nutrition for another item</string>
+
 
 
 </resources>

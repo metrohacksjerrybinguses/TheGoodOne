@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TheGoodOne</string>
+    <string name="foodName">Food</string>
+    <string name="serving">Serving Size</string>
+    <string name="calories">Calories</string>
+
+
 </resources>

@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="8sp"
-            android:background="#581af4">
+            android:background="#a80194">
 
             <TextView
                 android:id="@+id/date"
@@ -51,39 +51,33 @@
 
             <TextView
                 android:id="@+id/timelabel"
-                android:layout_width="wrap_content"
+                android:layout_width="0sp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10sp"
-                android:layout_marginRight="35sp"
+                android:layout_weight="0.15"
                 android:text="@string/time"
                 android:textColor="#ffffff"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textAlignment="center"/>
 
             <TextView
                 android:id="@+id/itemlabel"
-                android:layout_width="wrap_content"
+                android:layout_width="0sp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="35sp"
+                android:layout_weight="0.3"
                 android:text="@string/item"
                 android:textColor="#ffffff"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:id="@+id/quantitylabel"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginRight="30sp"
-                android:text="@string/amount"
-                android:textColor="#ffffff"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textAlignment="center"/>
 
             <TextView
                 android:id="@+id/calorielabel"
-                android:layout_width="wrap_content"
+                android:layout_width="0sp"
                 android:layout_height="match_parent"
+                android:layout_weight="0.2"
                 android:text="@string/calories"
                 android:textColor="#ffffff"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textAlignment="center"/>
 
         </LinearLayout>
 
@@ -98,25 +92,22 @@
                 android:id="@+id/times"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.15" />
+                android:layout_weight="0.15"
+                android:textAlignment="center"/>
 
             <TextView
                 android:id="@+id/items"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25" />
-
-            <TextView
-                android:id="@+id/quantities"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.3"
+                android:textAlignment="center"/>
 
             <TextView
                 android:id="@+id/caloriecounts"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.2"
+                android:textAlignment="center"/>
         </LinearLayout>
 
         <LinearLayout
@@ -124,7 +115,8 @@
             android:layout_height="0sp"
             android:layout_weight="1"
             android:gravity="center|bottom"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            >
 
             <Button
                 android:id="@+id/clearButton"
@@ -145,6 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="10sp"
+                android:layout_marginHorizontal="15sp"
                 android:background="@drawable/bg_buttonz"
                 android:onClick="goToHome"
                 android:paddingHorizontal="20sp"

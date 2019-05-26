@@ -23,6 +23,8 @@ public class DailyFood extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dailyfood);
 
+        TextView total = (TextView) findViewById(R.id.totalcals);
+        total.setText("Total Calories: "+ CSVTools.getInstance().getTotal());
         TextView date = (TextView) findViewById(R.id.date);
         Date today = Calendar.getInstance().getTime();//getting date
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");

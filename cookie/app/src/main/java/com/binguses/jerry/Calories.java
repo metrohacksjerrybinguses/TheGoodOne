@@ -16,10 +16,13 @@ public class Calories extends AppCompatActivity {
         setContentView(R.layout.activity_calories);
 
         TextView textView = (TextView) findViewById(R.id.foodName);
+        TextView calories = (TextView) findViewById(R.id.calories);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
+        int cal = (Integer)bundle.get("objCal");
         String obj = bundle.getString("objName");
         textView.setText(obj);
+        calories.setText(cal);
     }
 
     public void goToDay(View v){

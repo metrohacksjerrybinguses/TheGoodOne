@@ -24,7 +24,7 @@
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/Option1"
+            android:id="@+id/option1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15sp"
@@ -32,12 +32,12 @@
             android:clickable="true"
             android:onClick="opt1"
             android:paddingVertical="8sp"
-            android:text="j"
+            android:text="@string/start"
             android:textAlignment="center"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/Option2"
+            android:id="@+id/option2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15sp"
@@ -45,12 +45,12 @@
             android:clickable="true"
             android:onClick="opt2"
             android:paddingVertical="8sp"
-            android:text="j"
+            android:text="@string/start"
             android:textAlignment="center"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/Option3"
+            android:id="@+id/option3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15sp"
@@ -58,12 +58,12 @@
             android:clickable="true"
             android:onClick="opt3"
             android:paddingVertical="8sp"
-            android:text="j"
+            android:text="@string/start"
             android:textAlignment="center"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/Option4"
+            android:id="@+id/option4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15sp"
@@ -71,12 +71,12 @@
             android:clickable="true"
             android:onClick="opt4"
             android:paddingVertical="8sp"
-            android:text="j"
+            android:text="@string/start"
             android:textAlignment="center"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/Option5"
+            android:id="@+id/option5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15sp"
@@ -84,7 +84,7 @@
             android:clickable="true"
             android:onClick="opt5"
             android:paddingVertical="8sp"
-            android:text="j"
+            android:text="@string/start"
             android:textAlignment="center"
             android:textSize="25sp" />
 

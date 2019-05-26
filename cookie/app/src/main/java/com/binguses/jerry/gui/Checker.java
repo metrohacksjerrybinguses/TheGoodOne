@@ -3,6 +3,7 @@ package com.binguses.jerry.gui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,9 +54,9 @@ public class Checker extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToOptions(View v) {
-        Intent intent = new Intent(this, Options.class);
-        intent.putStringArrayListExtra("list", list);
-        startActivity(intent);
+    public void goToOptionPage(View v) {
+        Intent opt = new Intent(this, MainActivity.class);
+       // opt.putExtra("list", list);
+        startActivity(opt);
     }
 }

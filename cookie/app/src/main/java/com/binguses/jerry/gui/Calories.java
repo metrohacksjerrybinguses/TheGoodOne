@@ -16,7 +16,7 @@ public class Calories extends AppCompatActivity {
         setContentView(R.layout.activity_calories);
 
         TextView textView = (TextView) findViewById(R.id.foodName);
-        TextView calories = (TextView) findViewById(R.id.calories);
+        TextView calories = (TextView) findViewById(R.id.caloriesNum);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         double cal = (double) bundle.get("objCal");

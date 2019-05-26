@@ -93,15 +93,16 @@ public class MainActivity extends AppCompatActivity {
             }
             imageBitmap = Bitmap.createScaledBitmap(imageBitmap, classifier.getImageSizeX(), classifier.getImageSizeY(), false);
             //imageView.setImageBitmap(imageBitmap);
-//            goToHome();
+
         }
 
         // Start ML here
         processImage();
     }
 
-    public void goToHome() {
+    public void goToCalories(String s) {
         Intent intent = new Intent(this, Calories.class);
+        intent.putExtra("objName", s);
         startActivity(intent);
     }
 
@@ -114,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
                 new Runnable() {
                     @Override
                     public void run() {
-                        Log.wtf("Results", "pre classifier");
                         if (classifier != null) {
 
                             final List<Classifier.Recognition> results = classifier.recognizeImage(imageBitmap);
@@ -122,8 +122,8 @@ public class MainActivity extends AppCompatActivity {
 //                            cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
 
                             // Deal with results now
-                            Log.wtf("Results", "Should have results");
                             Log.wtf("Results", results.get(0).getTitle()+" "+Float.toString(results.get(0).getConfidence()));
+                            goToCalories(results.get(0).getTitle());
                         } else {
                             Log.wtf("Results", "null classifier");
                         }

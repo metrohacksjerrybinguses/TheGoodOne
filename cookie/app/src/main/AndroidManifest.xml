@@ -16,8 +16,9 @@
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
+        <activity android:name=".Calories"/>
+        <activity android:name=".DailyFood"/>
+        <activity android:name=".MainActivity"
             android:label="@string/date"
             android:screenOrientation="portrait">
             <intent-filter>

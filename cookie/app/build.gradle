@@ -37,7 +37,7 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
     implementation 'org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    //implementation files('build/intermediates/rs/debug/lib/jsoup-1.12.1.jar')
+    implementation files('build/intermediates/rs/debug/lib/jsoup-1.12.1.jar')
     // Use local TensorFlow library
     // implementation 'org.tensorflow:tensorflow-lite-local:0.0.0'
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 public class Calories extends AppCompatActivity {
 
@@ -11,6 +12,12 @@ public class Calories extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calories);
+
+        TextView textView = (TextView) findViewById(R.id.foodName);
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        String obj = bundle.getString("objName");
+        textView.setText(obj);
     }
 
     public void goToDay(View v){

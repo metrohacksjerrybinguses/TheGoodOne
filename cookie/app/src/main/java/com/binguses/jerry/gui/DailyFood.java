@@ -30,7 +30,7 @@ public class DailyFood extends AppCompatActivity {
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
         String dat = formatter.format(today);
         date.setText(dat);
-
+        CSVTools.getInstance().readDiet();
         addNames();
         addCalories();
     }

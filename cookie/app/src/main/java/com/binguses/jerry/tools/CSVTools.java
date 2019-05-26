@@ -50,7 +50,7 @@ public class CSVTools {
 
     public void writeDiet() {
         try {
-            writer = new CSVWriter(new FileWriter(csv, false));
+            writer = new CSVWriter(new FileWriter(csv, true));
         } catch (IOException e) {
             e.printStackTrace();
         }

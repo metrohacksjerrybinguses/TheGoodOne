@@ -1,4 +1,4 @@
-package org.tensorflow.lite.examples.classification;
+package com.binguses.jerry;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.tensorflow.lite.examples.classification.R;
 
 import java.io.IOException;
 

@@ -1,10 +1,12 @@
-package org.tensorflow.lite.examples.classification;
+package com.binguses.jerry;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+
+import org.tensorflow.lite.examples.classification.R;
 
 public class Calories extends AppCompatActivity {
 

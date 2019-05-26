@@ -31,7 +31,7 @@ public class Calories extends AppCompatActivity {
     }
 
     public void goToHome(View v){
-        Intent intent = new Intent(this, DailyFood.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

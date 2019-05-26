@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private int numThreads = -1;
 
     private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
+    private static final String PERMISSION_INTERNET = Manifest.permission.INTERNET;
     private android.graphics.Bitmap imageBitmap;
     private Bitmap croppedBitmap;
     private Classifier classifier;
@@ -50,9 +51,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (!hasPermission()) {
-            requestPermission();
-        }
+        if (!hasCameraPermission()|| !hasInternetPermission())
+            requestPermissions();
+
+        Log.wtf("perm", Boolean.toString(hasInternetPermission())+"poopy");
 
         Button btnCamera = findViewById(R.id.camera);
         btnCamera.setOnClickListener(new View.OnClickListener() {
@@ -149,29 +151,38 @@ public class MainActivity extends AppCompatActivity {
                     && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
 
             } else {
-                requestPermission();
+                if (!hasCameraPermission()|| !hasInternetPermission())
+                    requestPermissions();
             }
         }
     }
 
-    private boolean hasPermission() {
+    private boolean hasCameraPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return checkSelfPermission(PERMISSION_CAMERA) == PackageManager.PERMISSION_GRANTED;
+            return checkSelfPermission(PERMISSION_CAMERA) == PackageManager.PERMISSION_GRANTED && checkSelfPermission(PERMISSION_INTERNET) == PackageManager.PERMISSION_GRANTED;
         } else {
             return true;
         }
     }
 
-    private void requestPermission() {
+    private boolean hasInternetPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return checkSelfPermission(PERMISSION_INTERNET) == PackageManager.PERMISSION_GRANTED;
+        } else {
+            return true;
+        }
+    }
+
+    private void requestPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (shouldShowRequestPermissionRationale(PERMISSION_CAMERA)) {
                 Toast.makeText(
                         this,
-                        "Camera permission is required for this demo",
+                        "Internet permission is required for this demo",
                         Toast.LENGTH_LONG)
                         .show();
             }
-            requestPermissions(new String[]{PERMISSION_CAMERA}, PERMISSIONS_REQUEST);
+            requestPermissions(new String[]{PERMISSION_INTERNET, PERMISSION_CAMERA}, PERMISSIONS_REQUEST);
         }
     }
 

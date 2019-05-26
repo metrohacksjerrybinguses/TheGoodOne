@@ -39,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
     private int numThreads = -1;
 
     private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
-    private static final String PERMISSION_INTERNET = Manifest.permission.INTERNET;
+    private static final String PERMISSION_INTERNET = Manifest.permission.INTERNET,
+            PERMISSION_WRITE = Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            PERMISSION_READ = Manifest.permission.READ_EXTERNAL_STORAGE;
     private android.graphics.Bitmap imageBitmap;
     private Bitmap croppedBitmap;
     private Classifier classifier;
@@ -52,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (!hasCameraPermission()|| !hasInternetPermission())
+        if (!hasCameraPermission() || !hasInternetPermission())
             requestPermissions();
 
-        Log.wtf("perm", Boolean.toString(hasInternetPermission())+"poopy");
+        Log.wtf("perm", Boolean.toString(hasInternetPermission()) + "poopy");
 
         Button btnCamera = findViewById(R.id.camera);
         btnCamera.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         processImage();
     }
 
-    public void goToCalories(ArrayList<String> list){
+    public void goToCalories(ArrayList<String> list) {
         Intent intent = new Intent(this, Checker.class);
         //Scraper scraper = new Scraper(list);
         //double cal = scraper.crawl();
@@ -118,40 +120,40 @@ public class MainActivity extends AppCompatActivity {
 //                new Runnable() {
 //                    @Override
 //                    public void run() {
-                        if (classifier != null) {
+        if (classifier != null) {
 
-                            if (imageBitmap == null) {
+            if (imageBitmap == null) {
 //                                Toast.makeText(this, "No food found, please take another picture", Toast.LENGTH_LONG).show();
-                                Intent intent1 = new Intent(this,MainActivity.class);
-                                startActivity(intent1);
-                            } else {
+                Intent intent1 = new Intent(this, MainActivity.class);
+                startActivity(intent1);
+            } else {
 
-                                List<Classifier.Recognition> results = classifier.recognizeImage(imageBitmap);
-                                ArrayList<String> titles = new ArrayList<String>();
+                List<Classifier.Recognition> results = classifier.recognizeImage(imageBitmap);
+                ArrayList<String> titles = new ArrayList<String>();
 
-                                for (Classifier.Recognition result : results) {
-                                    Scraper scraper = new Scraper();
-                                    scraper.setFood(result.getTitle());
-                                    try {
-                                        scraper.execute().get();
-                                    } catch (ExecutionException e) {
-                                        e.printStackTrace();
-                                    } catch (InterruptedException e) {
-                                        e.printStackTrace();
-                                    }
-                                    if (scraper.getCalories() != -1) {
-                                        titles.add(result.getTitle());
-                                        break;
-                                    }
+                for (Classifier.Recognition result : results) {
+                    Scraper scraper = new Scraper();
+                    scraper.setFood(result.getTitle());
+                    try {
+                        scraper.execute().get();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if (scraper.getCalories() != -1) {
+                        titles.add(result.getTitle());
+                        break;
+                    }
 
-                                }
-                                goToCalories(titles);
-                            }
-                        } else {
-                            Log.wtf("Results", "null classifier");
-                        }
-                   // }
-               // });
+                }
+                goToCalories(titles);
+            }
+        } else {
+            Log.wtf("Results", "null classifier");
+        }
+        // }
+        // });
     }
 
     protected synchronized void runInBackground(final Runnable r) {
@@ -169,15 +171,23 @@ public class MainActivity extends AppCompatActivity {
                     && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
 
             } else {
-                if (!hasCameraPermission()|| !hasInternetPermission())
+                if (!hasCameraPermission() || !hasInternetPermission() || !hasWritePermission())
                     requestPermissions();
             }
         }
     }
 
+    private boolean hasWritePermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return checkSelfPermission(PERMISSION_WRITE) == PackageManager.PERMISSION_GRANTED;
+        } else {
+            return true;
+        }
+    }
+
     private boolean hasCameraPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return checkSelfPermission(PERMISSION_CAMERA) == PackageManager.PERMISSION_GRANTED && checkSelfPermission(PERMISSION_INTERNET) == PackageManager.PERMISSION_GRANTED;
+            return checkSelfPermission(PERMISSION_CAMERA) == PackageManager.PERMISSION_GRANTED;
         } else {
             return true;
         }
@@ -200,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_LONG)
                         .show();
             }
-            requestPermissions(new String[]{PERMISSION_INTERNET, PERMISSION_CAMERA}, PERMISSIONS_REQUEST);
+            requestPermissions(new String[]{PERMISSION_INTERNET, PERMISSION_CAMERA, PERMISSION_WRITE, PERMISSION_READ}, PERMISSIONS_REQUEST);
         }
     }
 

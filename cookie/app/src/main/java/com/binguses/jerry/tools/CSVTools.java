@@ -22,7 +22,7 @@ CSVTools {
     private CSVTools() {
         this.diet = new ArrayList<Food>();
         csv = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
-
+        csv+="/"+"food.csv";
     }
 
     public static CSVTools getInstance() {
@@ -68,9 +68,9 @@ CSVTools {
         ArrayList<String[]> dietString = new ArrayList<String[]>();
         for (Food food : diet) {
             dietString.add(new String[]{food.name, Double.toString(food.calories)});
-            Log.wtf("name",food.getName());
+            Log.wtf("name",food.getName()+food.calories);
         }
-
+        Log.wtf("NullCSV", Boolean.toString(dietString.size()==0));
         writer.writeAll(dietString);
     }
 

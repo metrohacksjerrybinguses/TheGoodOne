@@ -19,10 +19,10 @@ public class Calories extends AppCompatActivity {
         TextView calories = (TextView) findViewById(R.id.calories);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-//        int cal = (Integer)bundle.get("objCal");
+        double cal = (double) bundle.get("objCal");
         String obj = bundle.getString("objName");
         textView.setText(obj);
-//        calories.setText(cal);
+        calories.setText(new Double(cal).toString());
     }
 
     public void goToDay(View v){

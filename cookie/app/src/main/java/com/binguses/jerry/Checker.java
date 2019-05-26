@@ -11,8 +11,11 @@ import org.tensorflow.lite.examples.classification.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class Checker extends AppCompatActivity {
+
+    Scraper scraper = new Scraper();
 
     private ArrayList<String> list;
     @Override
@@ -28,9 +31,18 @@ public class Checker extends AppCompatActivity {
     }
 
     public void goToCalories(View v) {
-        Log.d("ajajajj","jjjaaa");
         Intent intent = new Intent(this, Calories.class);
         intent.putExtra("objName", list.get(0));
+        scraper.setFood(list.get(0));
+        try {
+            scraper.execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        double cal = scraper.getCalories();
+        intent.putExtra("objCal",cal);
         startActivity(intent);
     }
 

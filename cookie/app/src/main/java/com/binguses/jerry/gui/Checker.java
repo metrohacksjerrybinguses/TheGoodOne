@@ -40,7 +40,6 @@ public class Checker extends AppCompatActivity {
         }
 
         TextView percentage = (TextView) findViewById(R.id.percent);
-
     }
 
     public void goToCalories(View v) {

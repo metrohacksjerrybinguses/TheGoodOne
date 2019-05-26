@@ -55,6 +55,16 @@ public class DailyFood extends AppCompatActivity {
         cal.setText(names);
     }
 
+    public void addTimes(){
+        ArrayList<Food> a = CSVTools.getInstance().getDiet();
+        TextView tim = (TextView) findViewById(R.id.times);
+        String times = "";
+        for (Food f : a) {
+            times += f.getTime() + "\n";
+        }
+        tim.setText(times);
+    }
+
     public void goToHome(View v){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);

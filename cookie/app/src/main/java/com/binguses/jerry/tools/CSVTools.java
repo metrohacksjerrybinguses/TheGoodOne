@@ -25,7 +25,7 @@ public class CSVTools {
         this.diet = new ArrayList<Food>();
         csv = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
         Date today = Calendar.getInstance().getTime();
-        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("MM_dd_yyyy");
         String dat = formatter.format(today);
         csv+="/"+dat+".csv";
     }
@@ -72,11 +72,16 @@ public class CSVTools {
         }
         ArrayList<String[]> dietString = new ArrayList<String[]>();
         for (Food food : diet) {
+
             dietString.add(new String[]{food.name, Double.toString(food.calories)});
-            Log.wtf("name",food.getName()+food.calories);
+            Log.wtf("name",food.getName()+" "+food.calories);
         }
-        Log.wtf("NullCSV", Boolean.toString(dietString.size()==0));
         writer.writeAll(dietString);
+        try {
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void readDiet() {

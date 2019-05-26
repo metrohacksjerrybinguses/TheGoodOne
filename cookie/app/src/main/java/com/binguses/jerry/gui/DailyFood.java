@@ -3,6 +3,7 @@ package com.binguses.jerry.gui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class DailyFood extends AppCompatActivity {
         String dat = formatter.format(today);
         date.setText(dat);
         CSVTools.getInstance().readDiet();
+        Log.wtf("Food Size", String.valueOf(CSVTools.getInstance().getDiet().size()));
         addNames();
         addCalories();
         addTimes();
@@ -72,14 +74,13 @@ public class DailyFood extends AppCompatActivity {
     }
 
     public void clearFood(View v){
+        Log.wtf("Clear", "clearingFood");
         CSVTools.getInstance().clear();
-        TextView items = (TextView) findViewById(R.id.items);
-        items.setText("");
-        TextView cals = (TextView) findViewById(R.id.caloriecounts);
-        cals.setText("");
-        TextView totalCals = (TextView) findViewById(R.id.totalcals);
-        totalCals.setText("");
-        totalCals.setText("");
+        addNames();
+        addCalories();
+        addTimes();
+        TextView total = (TextView) findViewById(R.id.totalcals);
+        total.setText("Total Calories: "+ CSVTools.getInstance().getTotal());
     }
 
 

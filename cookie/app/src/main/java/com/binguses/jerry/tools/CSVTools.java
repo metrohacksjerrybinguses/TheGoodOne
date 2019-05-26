@@ -41,6 +41,10 @@ public class CSVTools {
         return diet;
     }
 
+    public void setDiet(ArrayList<Food> diet) {
+        this.diet = diet;
+    }
+
     public void writeDiet() {
         ArrayList<String[]> dietString = new ArrayList<String[]>();
         for (Food food : diet)

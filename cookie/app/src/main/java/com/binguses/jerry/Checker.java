@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.tensorflow.lite.examples.classification.R;
 
@@ -27,7 +28,13 @@ public class Checker extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         list = bundle.getStringArrayList("list");
-        textView.setText(list.get(0));
+        try {
+            textView.setText(list.get(0));
+        } catch (java.lang.IndexOutOfBoundsException e) {
+            Toast.makeText(this, "No food found, please take another picture", Toast.LENGTH_LONG).show();
+            Intent intent1 = new Intent(this,MainActivity.class);
+            startActivity(intent1);
+        }
     }
 
     public void goToCalories(View v) {

@@ -120,28 +120,33 @@ public class MainActivity extends AppCompatActivity {
 //                    public void run() {
                         if (classifier != null) {
 
-                            List<Classifier.Recognition> results = classifier.recognizeImage(imageBitmap);
-                            ArrayList<String> titles = new ArrayList<String>();
+                            if (imageBitmap == null) {
+//                                Toast.makeText(this, "No food found, please take another picture", Toast.LENGTH_LONG).show();
+                                Intent intent1 = new Intent(this,MainActivity.class);
+                                startActivity(intent1);
+                            } else {
 
-                            for (Classifier.Recognition result : results) {
-                                Scraper scraper = new Scraper();
-                                scraper.setFood(result.getTitle());
-                                try {
-                                    scraper.execute().get();
-                                } catch (ExecutionException e) {
-                                    e.printStackTrace();
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                                if (scraper.getCalories() != -1){
-                                    titles.add(result.getTitle());
-                                    break;
-                                }
+                                List<Classifier.Recognition> results = classifier.recognizeImage(imageBitmap);
+                                ArrayList<String> titles = new ArrayList<String>();
 
+                                for (Classifier.Recognition result : results) {
+                                    Scraper scraper = new Scraper();
+                                    scraper.setFood(result.getTitle());
+                                    try {
+                                        scraper.execute().get();
+                                    } catch (ExecutionException e) {
+                                        e.printStackTrace();
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+                                    if (scraper.getCalories() != -1) {
+                                        titles.add(result.getTitle());
+                                        break;
+                                    }
+
+                                }
+                                goToCalories(titles);
                             }
-                            // Deal with results now
-//                            Log.wtf("Results", results.get(0).getTitle() + " " + Float.toString(results.get(0).getConfidence()));
-                            goToCalories(titles);
                         } else {
                             Log.wtf("Results", "null classifier");
                         }

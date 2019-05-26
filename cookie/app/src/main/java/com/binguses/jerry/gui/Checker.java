@@ -53,8 +53,6 @@ public class Checker extends AppCompatActivity {
         }
         double cal = scraper.getCalories();
         intent.putExtra("objCal",cal);
-        CSVTools.getInstance().add(new Food(list.get(0), cal));
-        CSVTools.getInstance().writeDiet();
         startActivity(intent);
     }
 

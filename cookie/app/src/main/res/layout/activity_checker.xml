@@ -33,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:onClick="goToCalories"
             android:text="Yes" />
 
         <Button
@@ -40,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:onClick="goToOptions"
             android:text="no" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

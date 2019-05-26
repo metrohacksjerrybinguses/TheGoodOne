@@ -37,7 +37,7 @@ public class CSVTools {
         diet.clear();
     }
 
-    public ArrayList<Food> getDiet {
+    public ArrayList<Food> getDiet() {
         return diet;
     }
 

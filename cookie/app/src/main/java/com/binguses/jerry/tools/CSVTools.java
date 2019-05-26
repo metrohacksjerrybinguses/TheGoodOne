@@ -9,7 +9,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class CSVTools {
@@ -21,7 +24,10 @@ public class CSVTools {
     private CSVTools() {
         this.diet = new ArrayList<Food>();
         csv = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
-        csv+="/"+"food.csv";
+        Date today = Calendar.getInstance().getTime();
+        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+        String dat = formatter.format(today);
+        csv+="/"+dat+".csv";
     }
 
     public static CSVTools getInstance() {

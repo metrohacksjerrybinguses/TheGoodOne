@@ -46,6 +46,12 @@ public class CSVTools {
 
     public void clear() {
         diet.clear();
+        try {
+            writer = new CSVWriter(new FileWriter(csv, false));
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public ArrayList<Food> getDiet() {

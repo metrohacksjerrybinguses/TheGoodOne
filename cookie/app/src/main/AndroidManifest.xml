@@ -12,8 +12,8 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:roundIcon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.binguses.jerry.gui.Options"></activity>
@@ -22,7 +22,7 @@
         <activity android:name="com.binguses.jerry.gui.DailyFood" />
         <activity
             android:name="com.binguses.jerry.gui.MainActivity"
-            android:label="@string/date"
+            android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

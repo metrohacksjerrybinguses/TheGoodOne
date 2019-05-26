@@ -25,8 +25,20 @@ public class CSVTools {
         }
     }
 
-    public void setDiet(ArrayList<Food> diet) {
-        this.diet = diet;
+    public void add(Food food) {
+        diet.add(food);
+    }
+
+    public void remove(Food food) {
+        diet.remove(food);
+    }
+
+    public void clear() {
+        diet.clear();
+    }
+
+    public ArrayList<Food> getDiet {
+        return diet;
     }
 
     public void writeDiet() {
@@ -49,6 +61,7 @@ public class CSVTools {
             ArrayList<Food> diet = new ArrayList<Food>();
             for (String[] food : dietString)
                 diet.add(new Food(food[0], Double.parseDouble(food[1])));
+            setDiet(diet);
         } catch (IOException e) {
             e.printStackTrace();
         }

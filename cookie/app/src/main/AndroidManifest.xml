@@ -16,12 +16,12 @@
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.binguses.jerry.Options"></activity>
-        <activity android:name="com.binguses.jerry.Checker" />
-        <activity android:name="com.binguses.jerry.Calories" />
-        <activity android:name="com.binguses.jerry.DailyFood" />
+        <activity android:name="com.binguses.jerry.gui.Options"></activity>
+        <activity android:name="com.binguses.jerry.gui.Checker" />
+        <activity android:name="com.binguses.jerry.gui.Calories" />
+        <activity android:name="com.binguses.jerry.gui.DailyFood" />
         <activity
-            android:name="com.binguses.jerry.MainActivity"
+            android:name="com.binguses.jerry.gui.MainActivity"
             android:label="@string/date"
             android:screenOrientation="portrait">
             <intent-filter>

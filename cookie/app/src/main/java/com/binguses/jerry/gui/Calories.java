@@ -1,4 +1,4 @@
-package com.binguses.jerry;
+package com.binguses.jerry.gui;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,17 +1,17 @@
-package com.binguses.jerry;
+package com.binguses.jerry.gui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.binguses.jerry.tools.Scraper;
+
 import org.tensorflow.lite.examples.classification.R;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class Checker extends AppCompatActivity {
@@ -32,7 +32,7 @@ public class Checker extends AppCompatActivity {
             textView.setText(list.get(0));
         } catch (java.lang.IndexOutOfBoundsException e) {
             Toast.makeText(this, "No food found, please take another picture", Toast.LENGTH_LONG).show();
-            Intent intent1 = new Intent(this,MainActivity.class);
+            Intent intent1 = new Intent(this, MainActivity.class);
             startActivity(intent1);
         }
     }

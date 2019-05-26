@@ -1,4 +1,4 @@
-package com.binguses.jerry;
+package com.binguses.jerry.gui;
 
 import android.Manifest;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.binguses.jerry.Calories;
+import com.binguses.jerry.tools.Scraper;
 
 import org.tensorflow.lite.examples.classification.R;
 import org.tensorflow.lite.examples.classification.env.Logger;

@@ -1,10 +1,11 @@
-package com.binguses.jerry;
+package com.binguses.jerry.gui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+
+import com.binguses.jerry.gui.Calories;
 
 import org.tensorflow.lite.examples.classification.R;
 

@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DailyFood"></activity>
-        <activity android:name=".Main2Activity" />
         <activity android:name=".Calories" />
         <activity android:name=".MainActivity">
             <intent-filter>

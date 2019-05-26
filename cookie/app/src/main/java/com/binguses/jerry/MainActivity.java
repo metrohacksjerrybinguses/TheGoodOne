@@ -101,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToCalories(String s) {
         Intent intent = new Intent(this, Calories.class);
+        Scraper scraper = new Scraper(s);
+        double cal = scraper.crawl();
+        intent.putExtra("objCal",cal);
         intent.putExtra("objName", s);
         startActivity(intent);
     }

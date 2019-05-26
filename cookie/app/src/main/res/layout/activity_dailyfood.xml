@@ -127,6 +127,19 @@
             android:orientation="vertical" >
 
             <Button
+                android:id="@+id/clearButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10sp"
+                android:background="@drawable/bg_buttonz"
+                android:onClick="clearFood"
+                android:paddingHorizontal="20sp"
+                android:text="Clear Foods"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
                 android:id="@+id/newitembutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

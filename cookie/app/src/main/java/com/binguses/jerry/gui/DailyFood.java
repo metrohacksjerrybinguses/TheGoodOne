@@ -33,6 +33,7 @@ public class DailyFood extends AppCompatActivity {
         CSVTools.getInstance().readDiet();
         addNames();
         addCalories();
+        addTimes();
     }
 
     public void addNames(){
@@ -68,6 +69,17 @@ public class DailyFood extends AppCompatActivity {
     public void goToHome(View v){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
+    }
+
+    public void clearFood(View v){
+        CSVTools.getInstance().clear();
+        TextView items = (TextView) findViewById(R.id.items);
+        items.setText("");
+        TextView cals = (TextView) findViewById(R.id.caloriecounts);
+        cals.setText("");
+        TextView totalCals = (TextView) findViewById(R.id.totalcals);
+        totalCals.setText("");
+        totalCals.setText("");
     }
 
 

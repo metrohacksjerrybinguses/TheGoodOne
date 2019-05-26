@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.wtf("Results", "null classifier");
                         }
                     }
-                });
+                }); //comment
     }
 
     protected synchronized void runInBackground(final Runnable r) {

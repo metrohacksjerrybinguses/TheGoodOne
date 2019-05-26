@@ -13,24 +13,26 @@ import org.tensorflow.lite.examples.classification.R;
 
 public class Calories extends AppCompatActivity {
 
+    double cal;
+    String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calories);
-        
 
         TextView textView = (TextView) findViewById(R.id.foodName);
         TextView calories = (TextView) findViewById(R.id.caloriesNum);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        double cal = (double) bundle.get("objCal");
-        String obj = bundle.getString("objName");
-        textView.setText(obj);
+        cal = (double) bundle.get("objCal");
+        name = bundle.getString("objName");
+        textView.setText(name);
         calories.setText(new Double(cal).toString());
     }
 
     public void goToDay(View v){
-        CSVTools.getInstance().add(new Food(list.get(0), cal));
+        CSVTools.getInstance().add(new Food(name, cal));
         CSVTools.getInstance().writeDiet();
         Intent intent = new Intent(this, DailyFood.class);
         startActivity(intent);

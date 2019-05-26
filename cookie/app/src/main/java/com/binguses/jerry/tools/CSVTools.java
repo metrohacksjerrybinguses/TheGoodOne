@@ -12,8 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class
-CSVTools {
+public class CSVTools {
     String csv;
     CSVWriter writer;
     CSVReader reader = null;

@@ -63,7 +63,7 @@
                 android:id="@+id/itemlabel"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginRight="50sp"
+                android:layout_marginRight="35sp"
                 android:text="@string/item"
                 android:textColor="#ffffff"
                 android:textSize="18sp"/>
@@ -81,9 +81,9 @@
                 android:id="@+id/calorielabel"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/calcount"
+                android:text="@string/calories"
                 android:textColor="#ffffff"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -98,13 +98,13 @@
                 android:id="@+id/times"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.15" />
 
             <TextView
                 android:id="@+id/items"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.25" />
 
             <TextView
                 android:id="@+id/quantities"
@@ -116,7 +116,7 @@
                 android:id="@+id/caloriecounts"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3" />
+                android:layout_weight="0.2" />
         </LinearLayout>
 
         <LinearLayout
@@ -133,10 +133,11 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="10sp"
                 android:background="@drawable/bg_buttonz"
-                android:textColor="#ffffff"
+                android:onClick="goToHome"
                 android:paddingHorizontal="20sp"
-                android:textSize="20sp"
-                android:text="@string/nutrition" />
+                android:text="@string/nutrition"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
 
         </LinearLayout>
 

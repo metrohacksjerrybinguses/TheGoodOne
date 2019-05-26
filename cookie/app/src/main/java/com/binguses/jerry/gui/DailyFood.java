@@ -1,7 +1,9 @@
 package com.binguses.jerry.gui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
 
@@ -26,6 +28,9 @@ public class DailyFood extends AppCompatActivity {
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
         String dat = formatter.format(today);
         date.setText(dat);
+
+        addNames();
+        addCalories();
     }
 
     public void addNames(){
@@ -36,6 +41,22 @@ public class DailyFood extends AppCompatActivity {
             names += f.getName() +  "\n";
         }
         item.setText(names);
+    }
+
+    public void addCalories(){
+        ArrayList<Food> a = CSVTools.getInstance().getDiet();
+        TextView cal = (TextView) findViewById(R.id.caloriecounts);
+        String names = "";
+        for(Food f:a) {
+            names += f.getCalories() + "\n";
+        }
+        cal.setText(names);
+
+    }
+
+    public void goToHome(View v){
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 
 

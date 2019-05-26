@@ -24,6 +24,7 @@ import org.tensorflow.lite.examples.classification.tflite.Classifier;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /*This page is the home page that opens when the user opens the app.
 From this page the user can take a picture of food
@@ -113,27 +114,44 @@ public class MainActivity extends AppCompatActivity {
 
     protected void processImage() {
         Log.wtf("Results", "pre classifier");
-        runInBackground(
-                new Runnable() {
-                    @Override
-                    public void run() {
+//        runInBackground(
+//                new Runnable() {
+//                    @Override
+//                    public void run() {
                         if (classifier != null) {
 
-                            List<Classifier.Recognition> results = classifier.recognizeImage(imageBitmap);
-                            ArrayList<String> titles = new ArrayList<String>();
-                            Scraper scraper = new Scraper();
-                            for (Classifier.Recognition result : results) {
-                                if (scraper.crawl(result.getTitle()) != -1)
-                                    titles.add(result.getTitle());
+                            if (imageBitmap == null) {
+//                                Toast.makeText(this, "No food found, please take another picture", Toast.LENGTH_LONG).show();
+                                Intent intent1 = new Intent(this,MainActivity.class);
+                                startActivity(intent1);
+                            } else {
+
+                                List<Classifier.Recognition> results = classifier.recognizeImage(imageBitmap);
+                                ArrayList<String> titles = new ArrayList<String>();
+
+                                for (Classifier.Recognition result : results) {
+                                    Scraper scraper = new Scraper();
+                                    scraper.setFood(result.getTitle());
+                                    try {
+                                        scraper.execute().get();
+                                    } catch (ExecutionException e) {
+                                        e.printStackTrace();
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+                                    if (scraper.getCalories() != -1) {
+                                        titles.add(result.getTitle());
+                                        break;
+                                    }
+
+                                }
+                                goToCalories(titles);
                             }
-                            // Deal with results now
-//                            Log.wtf("Results", results.get(0).getTitle() + " " + Float.toString(results.get(0).getConfidence()));
-                            goToCalories(titles);
                         } else {
                             Log.wtf("Results", "null classifier");
                         }
-                    }
-                });
+                   // }
+               // });
     }
 
     protected synchronized void runInBackground(final Runnable r) {

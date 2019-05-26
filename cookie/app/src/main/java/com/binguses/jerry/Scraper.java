@@ -6,15 +6,11 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.io.IOException;
 public class Scraper {
-    String food;
 
-    public Scraper(String s){
-        food = s;
-    }
 
-    public double crawl(){
+    public double crawl(String s){
         double calories = 0;
-
+        String food = s;
         String url = "http://www.acaloriecounter.com/search/" + food.replace(' ','_');
         Elements search = null;
         try {

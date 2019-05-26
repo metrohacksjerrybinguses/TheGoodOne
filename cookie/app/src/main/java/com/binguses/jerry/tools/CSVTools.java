@@ -79,7 +79,7 @@ public class CSVTools {
         ArrayList<String[]> dietString = new ArrayList<String[]>();
         for (Food food : diet) {
 
-            dietString.add(new String[]{food.name, Double.toString(food.calories)});
+            dietString.add(new String[]{food.name, Double.toString(food.calories),food.time});
             Log.wtf("name",food.getName()+" "+food.calories);
         }
         writer.writeAll(dietString);
@@ -93,6 +93,7 @@ public class CSVTools {
     public void readDiet() {
         if (reader == null) {
             try {
+
                 reader = new CSVReader(new FileReader(csv));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();

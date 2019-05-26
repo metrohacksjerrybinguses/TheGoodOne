@@ -19,6 +19,7 @@ public class Calories extends AppCompatActivity {
 
     double cal;
     String name;
+    double serving;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,19 +28,22 @@ public class Calories extends AppCompatActivity {
 
         TextView textView = (TextView) findViewById(R.id.foodName);
         TextView calories = (TextView) findViewById(R.id.caloriesNum);
+        TextView num = (TextView) findViewById(R.id.servingss);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         cal = (double) bundle.get("objCal");
         name = bundle.getString("objName");
+        serving = 1;
         textView.setText(name);
         calories.setText(new Double(cal).toString());
+        num.setText(Double.toString(serving));
     }
 
     public void goToDay(View v){
         Date today = Calendar.getInstance().getTime();//getting date
         SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
         String time = formatter.format(today);
-        CSVTools.getInstance().add(new Food(name, cal, time));
+        CSVTools.getInstance().add(new Food(name, cal * serving, time));
         CSVTools.getInstance().writeDiet();
         Intent intent = new Intent(this, DailyFood.class);
         startActivity(intent);
@@ -48,5 +52,19 @@ public class Calories extends AppCompatActivity {
     public void goToHome(View v){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void up(View v) {
+        if (serving>=1) serving++;
+        else serving*=2;
+        TextView num = (TextView) findViewById(R.id.servingss);
+        num.setText(Double.toString(serving));
+    }
+
+    public void down(View v) {
+        if (serving<=1) serving/=2;
+        else serving--;
+        TextView num = (TextView) findViewById(R.id.servingss);
+        num.setText(Double.toString(serving));
     }
 }

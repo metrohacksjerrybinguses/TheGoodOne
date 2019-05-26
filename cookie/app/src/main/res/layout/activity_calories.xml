@@ -30,25 +30,75 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/calories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/calories"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="30sp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginTop="20sp"/>
+            <TextView
+                android:id="@+id/calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:text="@string/calPerServe"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/caloriesNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:text="@string/calories"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="25sp" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/caloriesNum"
+            android:id="@+id/servings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/servings"
+            android:textSize="30dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="10sp"/>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/calories"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="30sp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginTop="20sp"/>
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20sp">
+
+            <TextView
+                android:id="@+id/servingss"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10sp"
+                android:background="@drawable/bg_notsolargetext"
+                android:gravity="center_vertical"
+                android:paddingVertical="10sp"
+                android:paddingHorizontal="20sp"
+                android:text=""
+                android:textSize="40sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="80sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="up"
+                    android:text="@string/up" />
+
+                <Button
+                    android:layout_width="80sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="down"
+                    android:text="@string/down" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

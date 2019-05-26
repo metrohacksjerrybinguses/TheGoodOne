@@ -100,12 +100,12 @@ public class MainActivity extends AppCompatActivity {
         processImage();
     }
 
-    public void goToCalories(String s) {
-        Intent intent = new Intent(this, Calories.class);
-        Scraper scraper = new Scraper(s);
-        double cal = scraper.crawl();
-        intent.putExtra("objCal", cal);
-        intent.putExtra("objName", s);
+    public void goToCalories(ArrayList<String> list){
+        Intent intent = new Intent(this, Checker.class);
+        //Scraper scraper = new Scraper(list);
+        //double cal = scraper.crawl();
+        //intent.putExtra("objCal", cal);
+        intent.putExtra("list", list);
         startActivity(intent);
     }
 
@@ -123,14 +123,12 @@ public class MainActivity extends AppCompatActivity {
                                 titles.add(result.getTitle());
                             // Deal with results now
 //                            Log.wtf("Results", results.get(0).getTitle() + " " + Float.toString(results.get(0).getConfidence()));
-
-                            //goToCalories(titles);
-                            goToCalories(results.get(0).getTitle());
+                            goToCalories(titles);
                         } else {
                             Log.wtf("Results", "null classifier");
                         }
                     }
-                }); //comment
+                });
     }
 
     protected synchronized void runInBackground(final Runnable r) {

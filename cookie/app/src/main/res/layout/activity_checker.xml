@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.binguses.jerry.Checker">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Is this item a..."
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="food"
+            android:textAlignment="center"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/yesbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Yes" />
+
+        <Button
+            android:id="@+id/nobut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="no" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

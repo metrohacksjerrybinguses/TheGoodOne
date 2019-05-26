@@ -19,11 +19,7 @@ public class CSVTools {
     private CSVTools() {
         this.diet = new ArrayList<Food>();
         csv = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
-        try {
-            writer = new CSVWriter(new FileWriter(csv));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
     public static CSVTools getInstance() {
@@ -53,9 +49,15 @@ public class CSVTools {
     }
 
     public void writeDiet() {
+        try {
+            writer = new CSVWriter(new FileWriter(csv, false));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         ArrayList<String[]> dietString = new ArrayList<String[]>();
         for (Food food : diet)
             dietString.add(new String[]{food.name, Double.toString(food.calories)});
+
         writer.writeAll(dietString);
     }
 

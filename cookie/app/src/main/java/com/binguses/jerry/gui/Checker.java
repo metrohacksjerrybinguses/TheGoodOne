@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.binguses.jerry.tools.CSVTools;
+import com.binguses.jerry.tools.Food;
 import com.binguses.jerry.tools.Scraper;
 
 import org.tensorflow.lite.examples.classification.R;
@@ -51,6 +53,8 @@ public class Checker extends AppCompatActivity {
         }
         double cal = scraper.getCalories();
         intent.putExtra("objCal",cal);
+        CSVTools.getInstance().add(new Food(list.get(0), cal));
+        CSVTools.getInstance().writeDiet();
         startActivity(intent);
     }
 

@@ -15,14 +15,21 @@ public class CSVTools {
     CSVWriter writer;
     CSVReader reader = null;
     ArrayList<Food> diet;
-    public CSVTools(ArrayList<Food> diet) {
-        this.diet = diet;
+    static CSVTools tools = null;
+    private CSVTools() {
+        this.diet = new ArrayList<Food>();
         csv = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
         try {
             writer = new CSVWriter(new FileWriter(csv));
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static CSVTools getInstance() {
+        if (tools == null)
+            tools = new CSVTools();
+        return tools;
     }
 
     public void add(Food food) {

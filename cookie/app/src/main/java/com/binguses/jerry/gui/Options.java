@@ -32,25 +32,25 @@ public class Options extends AppCompatActivity {
 
     public void opt2(View v) {
         Intent intent = new Intent(this, Calories.class);
-        intent.putExtra("objName",list.get(1));
+        intent.putExtra("objName",list.get(2));
         startActivity(intent);
     }
 
     public void opt3(View v) {
         Intent intent = new Intent(this, Calories.class);
-        intent.putExtra("objName",list.get(1));
+        intent.putExtra("objName",list.get(3));
         startActivity(intent);
     }
 
     public void opt4(View v) {
         Intent intent = new Intent(this, Calories.class);
-        intent.putExtra("objName",list.get(1));
+        intent.putExtra("objName",list.get(4));
         startActivity(intent);
     }
 
     public void opt5(View v) {
         Intent intent = new Intent(this, Calories.class);
-        intent.putExtra("objName",list.get(1));
+        intent.putExtra("objName",list.get(5));
         startActivity(intent);
     }
 

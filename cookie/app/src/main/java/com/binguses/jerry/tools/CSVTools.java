@@ -10,7 +10,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CSVTools {
+public class
+CSVTools {
     String csv;
     CSVWriter writer;
     CSVReader reader = null;
@@ -42,6 +43,14 @@ public class CSVTools {
 
     public ArrayList<Food> getDiet() {
         return diet;
+    }
+    
+    public double getTotal(){
+        ArrayList<Food> a = getDiet();
+        double sum = 0;
+        for(Food f: a)
+            sum+= f.getCalories();
+        return sum;
     }
 
     public void setDiet(ArrayList<Food> diet) {

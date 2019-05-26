@@ -3,6 +3,8 @@ package com.binguses.jerry.gui;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+import java.util.ArrayList;
+import com.binguses.jerry.tools.Food;
 
 import org.tensorflow.lite.examples.classification.R;
 
@@ -23,4 +25,17 @@ public class DailyFood extends AppCompatActivity {
         String dat = formatter.format(today);
         date.setText(dat);
     }
+
+    public void addNames(){
+        TextView item = (TextView) findViewById(R.id.items);
+        String names = "";
+        for(Food f: ArrayList<Food>) {
+            names += f.getName() +  "\n";
+        }
+    }
+
+
+
+
+
 }

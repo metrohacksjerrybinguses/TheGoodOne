@@ -22,7 +22,8 @@
             android:layout_marginTop="50sp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/bg_largetext"
-            android:padding="10sp" />
+            android:paddingVertical="10sp"
+            android:paddingHorizontal="20sp"/>
 
         <TextView
             android:id="@+id/serving"
@@ -31,7 +32,8 @@
             android:text="@string/serving"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="30sp"
-            android:layout_marginLeft="10sp"/>
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="25sp"/>
 
         <TextView
             android:id="@+id/calories"
@@ -39,7 +41,9 @@
             android:layout_height="wrap_content"
             android:text="@string/calories"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="20sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:background="#ffc9fe"
+        android:padding="10sp">
 
         <TextView
             android:id="@+id/question"
@@ -24,7 +24,7 @@
             android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="food"
+            android:text="food?"
             android:textAlignment="center"
             android:textSize="36sp" />
 
@@ -32,16 +32,21 @@
             android:id="@+id/yesbutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:background="@drawable/bg_buttonz"
             android:onClick="goToCalories"
-            android:text="Yes" />
+            android:text="Yes"
+            android:layout_marginVertical="20sp"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/nobut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:background="@drawable/bg_buttonz"
             android:onClick="goToOptions"
-            android:text="no" />
+            android:text="no"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

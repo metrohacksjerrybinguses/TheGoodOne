@@ -41,7 +41,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="select">Select the correct option below:</string>
-    <string name="start">Get started</string>
+    <string name="start">New Food</string>
     <string name="up">up</string>
     <string name="down">down</string>
 </resources>

@@ -62,6 +62,4 @@ public class DailyFood extends AppCompatActivity {
 
 
 
-
-
 }

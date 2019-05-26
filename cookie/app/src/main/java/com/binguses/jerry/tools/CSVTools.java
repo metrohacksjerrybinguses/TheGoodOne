@@ -1,5 +1,7 @@
 package com.binguses.jerry.tools;
 
+import android.util.Log;
+
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
@@ -64,8 +66,10 @@ CSVTools {
             e.printStackTrace();
         }
         ArrayList<String[]> dietString = new ArrayList<String[]>();
-        for (Food food : diet)
+        for (Food food : diet) {
             dietString.add(new String[]{food.name, Double.toString(food.calories)});
+            Log.wtf("name",food.getName());
+        }
 
         writer.writeAll(dietString);
     }

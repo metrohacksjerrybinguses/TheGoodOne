@@ -96,7 +96,7 @@ public class CSVTools {
             List<String[]> dietString = reader.readAll();
             ArrayList<Food> diet = new ArrayList<Food>();
             for (String[] food : dietString)
-                diet.add(new Food(food[0], Double.parseDouble(food[1])));
+                diet.add(new Food(food[0], Double.parseDouble(food[1]),food[2]));
             setDiet(diet);
         } catch (IOException e) {
             e.printStackTrace();

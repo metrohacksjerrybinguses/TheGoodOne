@@ -53,7 +53,6 @@ public class DailyFood extends AppCompatActivity {
             names += f.getCalories() + "\n";
         }
         cal.setText(names);
-
     }
 
     public void goToHome(View v){

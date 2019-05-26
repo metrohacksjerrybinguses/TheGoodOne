@@ -11,6 +11,10 @@ import com.binguses.jerry.tools.Food;
 
 import org.tensorflow.lite.examples.classification.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Calories extends AppCompatActivity {
 
     double cal;
@@ -32,7 +36,10 @@ public class Calories extends AppCompatActivity {
     }
 
     public void goToDay(View v){
-        CSVTools.getInstance().add(new Food(name, cal));
+        Date today = Calendar.getInstance().getTime();//getting date
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
+        String time = formatter.format(today);
+        CSVTools.getInstance().add(new Food(name, cal, time));
         CSVTools.getInstance().writeDiet();
         Intent intent = new Intent(this, DailyFood.class);
         startActivity(intent);

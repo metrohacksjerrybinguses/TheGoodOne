@@ -17,14 +17,13 @@
             android:id="@+id/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Is this item a..."
+            android:text="@string/quest"
             android:textSize="36sp" />
 
         <TextView
             android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="food?"
             android:textAlignment="center"
             android:textSize="36sp" />
 
@@ -34,7 +33,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_buttonz"
             android:onClick="goToCalories"
-            android:text="Yes"
+            android:text="@string/yes"
             android:layout_marginVertical="20sp"
             android:textColor="#ffffff"
             android:textSize="20sp" />
@@ -45,7 +44,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_buttonz"
             android:onClick="goToOptions"
-            android:text="no"
+            android:text="@string/no"
             android:textColor="#ffffff"
             android:textSize="20sp" />
     </LinearLayout>

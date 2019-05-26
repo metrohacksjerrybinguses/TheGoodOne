@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TheGoodOne</string>
+    <string name="app_name">The Good One</string>
     <string name="description_info">Info</string>
     <string name="request_permission">This sample needs camera permission.</string>
     <string name="camera_error">This device doesn\'t support Camera2 API.</string>
@@ -36,4 +36,9 @@
     <string name="amount">Quantity</string>
     <string name="calcount">Calorie Count</string>
     <string name="nutrition">View nutrition for another item</string>
+    <string name="quest">Is this item a...</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="select">Select the correct option below:</string>
+    <string name="start">Get started</string>
 </resources>

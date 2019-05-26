@@ -4,6 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.binguses.jerry.Options">
+    tools:context="com.binguses.jerry.Options"
+    android:background="#ffc9fe">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select"
+            android:background="@drawable/bg_largetext"
+            android:textColor="#ffffff"
+            android:padding="10sp"
+            android:textSize="40sp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/Option1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:background="@drawable/bg_notsolargetext"
+            android:clickable="true"
+            android:onClick="opt1"
+            android:paddingVertical="8sp"
+            android:text="j"
+            android:textAlignment="center"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/Option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:background="@drawable/bg_notsolargetext"
+            android:clickable="true"
+            android:onClick="opt2"
+            android:paddingVertical="8sp"
+            android:text="j"
+            android:textAlignment="center"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/Option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:background="@drawable/bg_notsolargetext"
+            android:clickable="true"
+            android:onClick="opt3"
+            android:paddingVertical="8sp"
+            android:text="j"
+            android:textAlignment="center"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/Option4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:background="@drawable/bg_notsolargetext"
+            android:clickable="true"
+            android:onClick="opt4"
+            android:paddingVertical="8sp"
+            android:text="j"
+            android:textAlignment="center"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/Option5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:background="@drawable/bg_notsolargetext"
+            android:clickable="true"
+            android:onClick="opt5"
+            android:paddingVertical="8sp"
+            android:text="j"
+            android:textAlignment="center"
+            android:textSize="25sp" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

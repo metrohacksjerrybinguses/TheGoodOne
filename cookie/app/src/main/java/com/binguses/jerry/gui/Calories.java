@@ -34,7 +34,7 @@ public class Calories extends AppCompatActivity {
         cal = (double) bundle.get("objCal");
         name = bundle.getString("objName");
         serving = 1;
-        textView.setText(name);
+        textView.setText(name.toUpperCase());
         calories.setText(new Double(cal).toString());
         num.setText(Double.toString(serving));
     }

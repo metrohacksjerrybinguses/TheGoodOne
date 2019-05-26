@@ -57,10 +57,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/servings"
-            android:textSize="30dp"
+            android:textSize="25sp"
             android:textColor="@color/colorPrimaryDark"
             android:layout_marginTop="20sp"
-            android:layout_marginLeft="10sp"/>
+            android:layout_marginLeft="10sp"
+            android:layout_gravity="center_horizontal"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -90,13 +91,16 @@
                     android:layout_width="80sp"
                     android:layout_height="wrap_content"
                     android:onClick="up"
-                    android:text="@string/up" />
+                    android:text="@string/up"
+                    android:background="#ffffff"/>
 
                 <Button
                     android:layout_width="80sp"
                     android:layout_height="wrap_content"
                     android:onClick="down"
-                    android:text="@string/down" />
+                    android:layout_marginTop="20sp"
+                    android:text="@string/down"
+                    android:background="#ffffff"/>
 
             </LinearLayout>
 

@@ -33,7 +33,7 @@ public class Checker extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         list = bundle.getStringArrayList("list");
         try {
-            textView.setText(list.get(0));
+            textView.setText(list.get(0).toUpperCase());
         } catch (java.lang.IndexOutOfBoundsException e) {
             Toast.makeText(this, "No food found, please take another picture", Toast.LENGTH_LONG).show();
             Intent intent1 = new Intent(this, MainActivity.class);

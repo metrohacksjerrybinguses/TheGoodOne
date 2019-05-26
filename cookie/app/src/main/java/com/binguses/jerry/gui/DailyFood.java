@@ -53,7 +53,7 @@ public class DailyFood extends AppCompatActivity {
         TextView cal = (TextView) findViewById(R.id.caloriecounts);
         String names = "";
         for(Food f:a) {
-            names += f.getCalories() + "\n";
+            names += Math.round(f.getCalories()*100.0)/100.0 + "\n";
         }
         cal.setText(names);
     }

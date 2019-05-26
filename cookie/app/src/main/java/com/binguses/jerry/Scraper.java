@@ -9,7 +9,7 @@ public class Scraper {
 
 
     public double crawl(String s){
-        double calories = 0;
+        double calories = -1;
         String food = s;
         String url = "http://www.acaloriecounter.com/search/" + food.replace(' ','_');
         Elements search = null;

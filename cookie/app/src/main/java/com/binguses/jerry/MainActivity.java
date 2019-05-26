@@ -119,8 +119,11 @@ public class MainActivity extends AppCompatActivity {
 
                             List<Classifier.Recognition> results = classifier.recognizeImage(imageBitmap);
                             ArrayList<String> titles = new ArrayList<String>();
-                            for (Classifier.Recognition result : results)
-                                titles.add(result.getTitle());
+                            Scraper scraper = new Scraper();
+                            for (Classifier.Recognition result : results) {
+                                if (scraper.crawl(result.getTitle()) != -1)
+                                    titles.add(result.getTitle());
+                            }
                             // Deal with results now
 //                            Log.wtf("Results", results.get(0).getTitle() + " " + Float.toString(results.get(0).getConfidence()));
                             goToCalories(titles);

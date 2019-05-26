@@ -54,9 +54,17 @@ public class Checker extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToOptionPage(View v) {
-        Intent opt = new Intent(this, MainActivity.class);
-       // opt.putExtra("list", list);
-        startActivity(opt);
+    public void next(View v) {
+        if(list.size()>1) {
+            list.remove(0);
+            TextView textView = (TextView) findViewById(R.id.result);
+            textView.setText(list.get(0));
+        }
+        else{
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+
+
     }
 }

@@ -22,6 +22,7 @@ import org.tensorflow.lite.examples.classification.env.Logger;
 import org.tensorflow.lite.examples.classification.tflite.Classifier;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /*This page is the home page that opens when the user opens the app.
@@ -103,15 +104,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Calories.class);
         Scraper scraper = new Scraper(s);
         double cal = scraper.crawl();
-        intent.putExtra("objCal",cal);
+        intent.putExtra("objCal", cal);
         intent.putExtra("objName", s);
         startActivity(intent);
     }
 
     protected void processImage() {
-//        rgbFrameBitmap.setPixels(getRgbBytes(), 0, previewWidth, 0, 0, previewWidth, previewHeight);
-//        final Canvas canvas = new Canvas(croppedBitmap);
-//        canvas.drawBitmap(rgbFrameBitmap, frameToCropTransform, null);
         Log.wtf("Results", "pre classifier");
         runInBackground(
                 new Runnable() {
@@ -119,12 +117,14 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         if (classifier != null) {
 
-                            final List<Classifier.Recognition> results = classifier.recognizeImage(imageBitmap);
-//                            lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
-//                            cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
-
+                            List<Classifier.Recognition> results = classifier.recognizeImage(imageBitmap);
+                            ArrayList<String> titles = new ArrayList<String>();
+                            for (Classifier.Recognition result : results)
+                                titles.add(result.getTitle());
                             // Deal with results now
-                            Log.wtf("Results", results.get(0).getTitle()+" "+Float.toString(results.get(0).getConfidence()));
+//                            Log.wtf("Results", results.get(0).getTitle() + " " + Float.toString(results.get(0).getConfidence()));
+
+                            //goToCalories(titles);
                             goToCalories(results.get(0).getTitle());
                         } else {
                             Log.wtf("Results", "null classifier");

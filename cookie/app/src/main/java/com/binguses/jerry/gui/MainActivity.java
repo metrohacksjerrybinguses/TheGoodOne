@@ -233,4 +233,12 @@ public class MainActivity extends AppCompatActivity {
             LOGGER.e(e, "Failed to create classifier.");
         }
     }
+
+
+    public void goToDailyFood(View v){
+        Intent intent = new Intent(this,DailyFood.class);
+        startActivity(intent);
+
+
+    }
 }

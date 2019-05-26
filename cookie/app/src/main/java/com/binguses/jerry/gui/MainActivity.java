@@ -116,10 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected void processImage() {
         Log.wtf("Results", "pre classifier");
-//        runInBackground(
-//                new Runnable() {
-//                    @Override
-//                    public void run() {
+
         if (classifier != null) {
 
             if (imageBitmap == null) {
@@ -152,8 +149,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Log.wtf("Results", "null classifier");
         }
-        // }
-        // });
     }
 
     protected synchronized void runInBackground(final Runnable r) {

@@ -22,6 +22,7 @@ public class Checker extends AppCompatActivity {
     Scraper scraper = new Scraper();
 
     private ArrayList<String> list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +40,6 @@ public class Checker extends AppCompatActivity {
             startActivity(intent1);
         }
 
-        TextView percentage = (TextView) findViewById(R.id.percent);
     }
 
     public void goToCalories(View v) {

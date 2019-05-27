@@ -27,7 +27,7 @@
     <string name="foodName">Food</string>
     <string name="serving">Serving Size</string>
     <string name="calories">Calories</string>
-    <string name="calPerServe">Calories per Serving</string>
+    <string name="calPerServe">Calories per Serving:</string>
     <string name="servings">How many servings?</string>
     <string name="home">Home</string>
     <string name="add">Add</string>
@@ -41,7 +41,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="select">Select the correct option below:</string>
-    <string name="start">Get started</string>
-    <string name="up">up</string>
-    <string name="down">down</string>
+    <string name="start">New Food</string>
+    <string name="up">More</string>
+    <string name="down">Less</string>
 </resources>

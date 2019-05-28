@@ -1,45 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.binguses.jerry.gui.MainActivity">
 
-    <!--<TextView-->
-        <!--android:id="@+id/home"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/app_name"-->
-        <!--android:textSize="50sp" />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
 
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="Result..."
-        android:layout_below="@id/getBtn"/>
+        <TextView
+            android:id="@+id/apptitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80sp"
+            android:fontFamily="sans-serif-black"
+            android:paddingHorizontal="15sp"
+            android:paddingVertical="10sp"
+            android:text="@string/app_name"
+            android:textColor="@color/dark"
+            android:textSize="50sp" />
 
-    <Button
-        android:id="@+id/getBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Website"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true" />
+        <Button
+            android:id="@+id/camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120sp"
+            android:padding="16sp"
+            android:text="@string/start"
+            android:textSize="30sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/bg_buttonz"/>
 
-    <Button
-        android:id="@+id/camera"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
-        android:text="Button"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/dailyFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40sp"
+            android:background="@drawable/bg_buttonz"
+            android:onClick="goToDailyFood"
+            android:padding="16sp"
+            android:text="Today's Food"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
 
-
-</RelativeLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

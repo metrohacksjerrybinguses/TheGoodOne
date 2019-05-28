@@ -1,0 +1,23 @@
+#Internal package file, do not edit.
+#Sun May 26 03:31:50 EDT 2019
+2.base=C\:\\Users\\user\\Code\\TheGoodOne\\cookie\\app\\build\\intermediates\\merged_assets\\debug\\out
+0.path=mobilenet_v1_1.0_224_quant.tflite
+2.baseType=DIRECTORY
+3.base=C\:\\Users\\user\\Code\\TheGoodOne\\cookie\\app\\build\\intermediates\\merged_assets\\debug\\out
+2.set=ASSET
+1.path=labels.txt
+4.base=C\:\\Users\\user\\Code\\TheGoodOne\\cookie\\app\\build\\intermediates\\merged_assets\\debug\\out
+count=5
+2.path=mobilenet_v1_1.0_224_info.txt
+4.set=ASSET
+3.path=mobilenet_v1_1.0_224.tflite
+3.baseType=DIRECTORY
+1.set=ASSET
+4.path=mobilenet_v1_1.0_224_quant_info.txt
+1.baseType=DIRECTORY
+0.base=C\:\\Users\\user\\Code\\TheGoodOne\\cookie\\app\\build\\intermediates\\merged_assets\\debug\\out
+0.baseType=DIRECTORY
+3.set=ASSET
+1.base=C\:\\Users\\user\\Code\\TheGoodOne\\cookie\\app\\build\\intermediates\\merged_assets\\debug\\out
+4.baseType=DIRECTORY
+0.set=ASSET

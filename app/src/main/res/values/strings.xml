@@ -1,16 +1,47 @@
 <resources>
-    <string name="app_name">TheGoodOne</string>
+    <string name="app_name">The Good One</string>
+    <string name="description_info">Info</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="toggle_turn_on">NN:On</string>
+    <string name="toggle_turn_off">NN:Off</string>
+    <string name="toggle">Use NNAPI</string>
+    <string name="tflite">tflite</string>
+    <string name="nnapi">NNAPI</string>
+    <string name="threads">Threads:</string>
+
+    <string name="model">Model:</string>
+    <string-array name="models">
+        <item>Quantized</item>
+        <item>Float</item>
+    </string-array>
+
+    <string name="device">Device:</string>
+    <string-array name="devices">
+        <item>CPU</item>
+        <item>GPU</item>
+        <item>NNAPI</item>
+    </string-array>
+
+
     <string name="foodName">Food</string>
     <string name="serving">Serving Size</string>
     <string name="calories">Calories</string>
+    <string name="calPerServe">Calories per Serving:</string>
+    <string name="servings">How many servings?</string>
     <string name="home">Home</string>
     <string name="add">Add</string>
     <string name="date">Date</string>
-    <string name="total">Total Calories: [number]</string>
+    <string name="total">Total Calories:</string>
     <string name="time">Time</string>
     <string name="item">Item</string>
     <string name="amount">Quantity</string>
-    <string name="calcount">Calorie Count</string>
     <string name="nutrition">View nutrition for another item</string>
-
+    <string name="quest">Is this item a...</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="select">Select the correct option below:</string>
+    <string name="start">New Food</string>
+    <string name="up">More</string>
+    <string name="down">Less</string>
 </resources>

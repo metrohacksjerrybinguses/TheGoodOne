@@ -7,5 +7,5 @@ This app uses a TensorFlow Lite implementation of MobileNet and a homemade web s
 ### Dependencies (which ship with the app)
 
 - TensorFlow Lite (for machine learning)
-- JSoup (for web sccraping)
+- JSoup (for web scraping)
 - OpenCSV (for saving foods)
